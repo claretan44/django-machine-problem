@@ -1,8 +1,9 @@
 from django.urls import path
 
-from .views import ListArtist, DetailArtist, ListArtwork, DetailArtwork
+from .views import ListArtist, DetailArtist, ListArtwork, DetailArtwork, index
 
 urlpatterns = [
+    path('', index, name='index'),
     path('artists/', ListArtist.as_view(), name='list_artist'),
     path('artists/<int:pk>/', DetailArtist.as_view(), name='detail_artist'),
     path('artworks/', ListArtwork.as_view(), name='list_artwork'),

@@ -1,10 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Artworks API</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
-$END$
+    <h1> Welcome to Artworks API! Django Rest Framework should make using the API simple, but for manual testing here are the endpoints available: </h1>
+    <h2> Available Endpoints </h2>
+    <h3> GET: /artworks/ </h3>
+    <p> Returns all artworks in the database </p>
+    <h3> GET: /artists </h3>
+    <p> Returns all artists in the database </p>
+    <h3> GET: /artworks/:id </h3>
+    <p> Returns the details of the artwork with the specified id </p>
+    <h3> GET: /artists/:id </h3>
+    <p> Returns the details of the artist with the specified id </p>
+    <h3> POST: /artists/ </h3>
+    <p> Use this to add an artist.
+        The request body should be in JSON and contain all of the following properties:
+    </p>
+    <ul>
+        <li>"name" (a string)</li>
+        <li>"birth_year" (an integer)</li>
+        <li>"birth_place" (a string)</li>
+    </ul>
+    <h3> POST: /artworks/ </h3>
+    <p> Use this to add an artwork.
+        The request body should be in JSON and contain all of the following properties:
+    </p>
+    <ul>
+        <li>"title" (a string)</li>
+        <li>"year" (an integer)</li>
+        <li>"artist_id" (an integer)</li>
+    </ul>
+    <p> The given artist_id must exist in the artists database.  </p>
+    <h3> PATCH/PUT: /artworks/:artworkId </h3>
+    <p> Used for updating artwork information. Request body has the same format as the POST method, but not all parameters are required for PATCH</p>
+    <h3> PATCH/PUT: /artists/:artistId </h3>
+    <p> Used for updating artist information. Request body has the same format as the POST method, but not all parameters are required for PATCH </p>
+    <h3> DELETE: /artworks/:artworkId </h3>
+    <p> Use this to delete an artwork. </p>
+    <h3> DELETE: /artists/:artistId </h3>
+    <p> Use this to delete an artist. </p>
 </body>
 </html>
